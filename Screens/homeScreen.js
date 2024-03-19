@@ -4,7 +4,7 @@ import styles from '../css/homeStyle.js'
 const home = () =>{
     return(
         <View style={styles.conteiner}>
-            <Text>Hello world</Text>
+            
         </View>
     );
 }

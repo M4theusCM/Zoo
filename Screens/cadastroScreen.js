@@ -12,24 +12,20 @@ const cadastroScreen = ({navigation}) => {
     const [senha, setSenha] = useState('');
     function alterarScreen(){
         navigation.navigate('loading', {cadastro: 'alterar-Screen'});
-        // navigation.navigate('loading', { login: 'cadastro-concluido' });
     }
-    function cadastrar(){
-        // navigation.navigate('loading', {cadastro: 'alterar-Screen'});
-        navigation.navigate('loading', { login: 'cadastro-concluido' });
+    const cadastrar = async () =>{
+        if(nome!==null && email!==null && senha!== null){
+            const dataUser = {nome, email, senha};
+            try {
+                await AsyncStorage.setItem('dataUser', JSON.stringify(dataUser));
+                console.log('Dados do usuário salvos com sucesso!');
+                navigation.navigate('loading', { cadastro: 'cadastro-concluido' });
+            } 
+            catch (error) {
+                console.error('Erro ao salvar os dados do usuário:', error);
+            }
+        };
     }
-    // const cadastrar = async () =>{
-    //     if(nome!==null && email!==null && senha!== null){
-    //         const dataUser = {nome, email, senha};
-    //         try {
-    //             await AsyncStorage.setItem('dataUser', JSON.stringify(dataUser));
-    //             console.log('Dados do usuário salvos com sucesso!');
-    //         } 
-    //         catch (error) {
-    //             console.error('Erro ao salvar os dados do usuário:', error);
-    //         }
-    //     };
-    // }
     return(
         <ImageBackground source={fundoImg} style={styles.fundo}>
             <View style={styles.conteiner}>
