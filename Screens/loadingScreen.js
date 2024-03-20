@@ -41,7 +41,7 @@ const loadingScreen = ({navigation}) =>{
         if(valorCadastro === 'cadastro-concluido'){
             // troca para tela de cadastro
             const timeout = setTimeout(() =>{
-                navigation.replace('logi');
+                navigation.replace('login');
             }, time);
             return () => clearTimeout(timeout);
         }
