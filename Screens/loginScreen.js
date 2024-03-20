@@ -10,22 +10,21 @@ const loginScreen = ({navigation}) => {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [dadosUsuario, setDadosUsuario] = useState(null); 
-    useEffect(() => {
-        const carregarDadosUsuario = async () => {
-          try {
-            const dadosSalvos = await AsyncStorage.getItem('userData');
-            if (dadosSalvos !== null) {
-              setDadosUsuario(JSON.parse(dadosSalvos));
-            }
-          } catch (error) {
-            console.error('Erro ao carregar os dados do usuário:', error);
-          }
-        };
-    
-        carregarDadosUsuario();
-      }, []);
-      console.log(dadosUsuario)
-    
+    // useEffect(() => {
+    //     const carregarDadosUsuario = async () => {
+    //       try {
+    //         const dadosSalvos = await AsyncStorage.getItem('dataUser');
+    //         if (dadosSalvos !== null) {
+    //           setDadosUsuario(JSON.parse(dadosSalvos));
+    //         }
+    //       } catch (error) {
+    //         console.error('Erro ao carregar os dados do usuário:', error);
+    //       }
+    //     };
+    //     carregarDadosUsuario();
+    //   }, []);
+      
+    console.log(dadosUsuario)
     function alterarScreen() {
         navigation.navigate('loading', { login: 'alterar-Screen' });    
     }
@@ -54,7 +53,7 @@ const loginScreen = ({navigation}) => {
                         <Image source={loginImg} style={loginImg}/>
                     </Pressable>
                     <Pressable>
-                        <Text style={styles.alterar} onPress={alterarScreen}>Não tenho Conta</Text>
+                        <Text style={styles.alterar} onPress={alterarScreen}>Não tenho Conta{dadosUsuario}</Text>
                     </Pressable>
                 </View>
             </View>
