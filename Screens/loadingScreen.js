@@ -6,6 +6,7 @@ import fundoImg from '../assets/img/fundo/fundo-1.png'
 import logo from '../assets/img/icone/ZooKids.png'
 import gif from '../assets/gif/carregamento-1-unscreen.gif'
 import { useRoute } from '@react-navigation/native'; 
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const loadingScreen = ({navigation}) =>{
     const route =useRoute();
@@ -16,43 +17,38 @@ const loadingScreen = ({navigation}) =>{
     // valores para troca de tela
     const valorLogin = route.params?.login;
     const valorCadastro = route.params?.cadastro;
-    useEffect(() =>{
-        // verificação e recarregamento ao trocar de tela
-        if (valorLogin === 'alterar-Screen'){
-            // troca para tela de cadastro
-            const timeout = setTimeout(() =>{
-                navigation.replace('cadastro');
-            }, time);
-            return () => clearTimeout(timeout);
-        }
-        if(valorLogin === 'login-correto'){
-            const timeout = setTimeout(() =>{
-                navigation.replace('home');
-            }, time);
-            return () => clearTimeout(timeout);
-        }
-        if (valorCadastro === 'alterar-Screen'){
-            // troca para tela de cadastro
-            const timeout = setTimeout(() =>{
-                navigation.replace('login');
-            }, time);
-            return () => clearTimeout(timeout);
-        }
-        if(valorCadastro === 'cadastro-concluido'){
-            // troca para tela de cadastro
-            const timeout = setTimeout(() =>{
-                navigation.replace('login');
-            }, time);
-            return () => clearTimeout(timeout);
+    useEffect(() => {
+        const verificarUsuario = async () => {
+            try {
+                const value = await AsyncStorage.getItem('idUser');
+                if (value !== null) {
+                    console.log("Valor recuperado com sucesso", value);
+                    setTimeout(() => navigation.replace('home'), 3000);
+                } else {
+                    console.log("Nenhum valor encontrado para essa chave");
+                    redirecionarTela();
+                }
+            } catch (error) {
+                console.error("Erro na recuperação dos dados: ", error);
+                redirecionarTela();
+            }
         }
 
-        // tela de loading => loginScreen
-        const timeout = setTimeout(() =>{
-            navigation.replace("login");
-        }, timeLoading);
-        return () => clearTimeout(timeout);
-        // fim
-    }, [navigation]);
+        const redirecionarTela = () => {
+            if (valorLogin === 'alterar-Screen') {
+                setTimeout(() => navigation.replace('cadastro'), 1500);
+            } else if (valorLogin === 'login') {
+                setTimeout(() => navigation.replace('home'), 1500);
+            } else if (valorCadastro === 'alterar-Screen' || valorCadastro === 'cadastro-concluido') {
+                setTimeout(() => navigation.replace('login'), 1500);
+            } else {
+                setTimeout(() => navigation.replace("login"), 7000);
+            }
+        }
+
+        verificarUsuario();
+    }, [navigation, valorLogin, valorCadastro]);
+
     return (
         <ImageBackground source={fundoImg} style={styles.imgFundo}>
             <View style={styles.conteiner}>

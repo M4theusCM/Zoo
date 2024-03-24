@@ -1,7 +1,9 @@
 base para instalar a navegação stack:
-
     npm install @react-navigation/native @react-navigation/native-stack
     npx expo install react-native-screens react-native-safe-area-context
 
 salvamento dos dados
-    npx expo install @react-native-async-storage/async-storage
+    banco
+        npm install axios
+    local
+        npx expo install @react-native-async-storage/async-storage

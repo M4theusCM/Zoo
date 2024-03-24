@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
         height: 202, //1,15 x 176 da view
         alignItems: 'center',
         justifyContent: 'center',
+        marginBottom:30,
     },
     territorio:{
         backgroundColor: '#000',

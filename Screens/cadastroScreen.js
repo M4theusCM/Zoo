@@ -5,7 +5,8 @@ import styles from '../css/loginStyle.js';
 import fundoImg from '../assets/img/fundo/fundo-2.png';
 import logoImg from '../assets/img/icone/ZooKids.png';
 import loginImg from '../assets/img/icone/login.png';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+// import savamento
+import axios, { Axios } from 'axios';
 const cadastroScreen = ({navigation}) => {
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
@@ -13,18 +14,28 @@ const cadastroScreen = ({navigation}) => {
     function alterarScreen(){
         navigation.navigate('loading', {cadastro: 'alterar-Screen'});
     }
-    const cadastrar = async () =>{
-        if(nome!==null && email!==null && senha!== null){
-            const dataUser = {nome, email, senha};
-            try {
-                await AsyncStorage.setItem('dataUser', JSON.stringify(dataUser));
-                console.log('Dados do usuário salvos com sucesso!');
-                navigation.navigate('loading', { cadastro: 'cadastro-concluido' });
-            } 
-            catch (error) {
-                console.error('Erro ao salvar os dados do usuário:', error);
+    const cadastrar = async() =>{
+        const dadosUser={
+            'nome': nome,
+            'email': email,
+            'senha': senha,
+        };
+
+        const axiosConfig = {
+            headers: {
+                /* 'Accept': 'application/json',
+                */'Content-Type': 'application/x-www-form-urlencoded'
             }
         };
+
+        try {
+            const response = await axios.post('http://localhost/apiZoo/userInsert', dadosUser, axiosConfig );
+            console.log(response.data);
+            navigation.navigate('loading', {cadastro: 'cadastro-completo'}); navigation.navigate('loading', {cadastro: 'alterar-Screen'});
+        } catch (error) {
+            console.error('Erro ao criar jogador1', error );
+            return false;
+        }
     }
     return(
         <ImageBackground source={fundoImg} style={styles.fundo}>
