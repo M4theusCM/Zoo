@@ -13,7 +13,7 @@ import territorioO from '../assets/img/territorios/territorio-o-mini.png'
 import territorioX from '../assets/img/territorios/territorio-x-mini.png'
 import imgModal from '../assets/img/icone/zoo.png'
 import fundoModal from '../assets/img/fundo/fundo-2-mini.png'
-const home = () => {
+const HomeScreen = () => {
     const [modalVisible, setModalVisible] = useState(false);
     const [modalShow, setModalShown] = useState(false);
 
@@ -143,4 +143,4 @@ const home = () => {
 
     );
 }
-export default home;
+export default HomeScreen;

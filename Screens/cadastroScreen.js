@@ -7,7 +7,7 @@ import logoImg from '../assets/img/icone/ZooKids.png';
 import loginImg from '../assets/img/icone/login.png';
 // import savamento
 import axios, { Axios } from 'axios';
-const cadastroScreen = ({navigation}) => {
+const CadastroScreen = ({navigation}) => {
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
@@ -67,4 +67,5 @@ const cadastroScreen = ({navigation}) => {
         </ImageBackground>
     );
 }
-export default cadastroScreen;
+export default CadastroScreen;
+

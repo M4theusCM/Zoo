@@ -3,19 +3,21 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 // impotação das telas
-import loadingScreen from './Screens/loadingScreen';
-import loginScreen from './Screens/loginScreen';
-import cadastroScreen from './Screens/cadastroScreen';
-import homeScreen from './Screens/homeScreen';
+import LoadingScreen from './Screens/LoadingScreen';
+import LoginScreen from './Screens/LoginScreen';
+import CadastroScreen from './Screens/CadastroScreen';
+import HomeScreen from './Screens/HomeScreen';
+import WelcomeScreen from './Screens/WelcomeScreen'
 const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='loading'>
-        <Stack.Screen name="loading" component={loadingScreen}  options={{ headerShown: false }}/>
-        <Stack.Screen name="login" component={loginScreen} options={{headerShown: false}}/>
-        <Stack.Screen name="cadastro" component={cadastroScreen} options={{headerShown:false}} />
-        <Stack.Screen name="home" component={homeScreen} options={{headerShown:false}} />
+      <Stack.Navigator initialRouteName='Loading'>
+        <Stack.Screen name="Loading" component={LoadingScreen}  options={{ headerShown: false }}/>
+        <Stack.Screen name="Login" component={LoginScreen} options={{headerShown: false}}/>
+        <Stack.Screen name="Cadastro" component={CadastroScreen} options={{headerShown:false}} />
+        <Stack.Screen name="Home" component={HomeScreen} options={{headerShown:false}} />
+        <Stack.Screen name="Welcome" component={WelcomeScreen} options={{headerShown:false}} />
       </Stack.Navigator>
     </NavigationContainer>
   );

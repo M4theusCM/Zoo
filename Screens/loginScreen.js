@@ -7,7 +7,7 @@ import loginImg from '../assets/img/icone/login.png';
 import axios from 'axios'; // Importar o axios
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const loginScreen = ({ navigation }) => {
+const LoginScreen = ({ navigation }) => {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
 
@@ -63,4 +63,4 @@ const loginScreen = ({ navigation }) => {
     );
 }
 
-export default loginScreen;
+export default LoginScreen;

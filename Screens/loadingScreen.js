@@ -8,7 +8,7 @@ import gif from '../assets/gif/carregamento-1-unscreen.gif'
 import { useRoute } from '@react-navigation/native'; 
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const loadingScreen = ({navigation}) =>{
+const LoadingScreen = ({navigation}) =>{
     const route =useRoute();
     // tempo tela de carregamento/splash
     const timeLoading = 7000 ;
@@ -23,7 +23,7 @@ const loadingScreen = ({navigation}) =>{
                 const value = await AsyncStorage.getItem('idUser');
                 if (value !== null) {
                     console.log("Valor recuperado com sucesso", value);
-                    setTimeout(() => navigation.replace('home'), 3000);
+                    setTimeout(() => navigation.replace('Home'), 3000);
                 } else {
                     console.log("Nenhum valor encontrado para essa chave");
                     redirecionarTela();
@@ -36,13 +36,13 @@ const loadingScreen = ({navigation}) =>{
 
         const redirecionarTela = () => {
             if (valorLogin === 'alterar-Screen') {
-                setTimeout(() => navigation.replace('cadastro'), 1500);
+                setTimeout(() => navigation.replace('Cadastro'), 1500);
             } else if (valorLogin === 'login') {
-                setTimeout(() => navigation.replace('home'), 1500);
+                setTimeout(() => navigation.replace('Home'), 1500);
             } else if (valorCadastro === 'alterar-Screen' || valorCadastro === 'cadastro-concluido') {
-                setTimeout(() => navigation.replace('login'), 1500);
+                setTimeout(() => navigation.replace('Login'), 1500);
             } else {
-                setTimeout(() => navigation.replace("login"), 7000);
+                setTimeout(() => navigation.replace("Welcome"), 7000);
             }
         }
 
@@ -63,5 +63,5 @@ const loadingScreen = ({navigation}) =>{
          </ImageBackground>
     );
 };
- export default loadingScreen;
+ export default LoadingScreen;
 
