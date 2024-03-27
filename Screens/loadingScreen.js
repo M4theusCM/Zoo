@@ -20,7 +20,7 @@ const LoadingScreen = ({navigation}) =>{
     useEffect(() => {
         const verificarUsuario = async () => {
             try {
-                const value = await AsyncStorage.getItem('idUser');
+                const value = await AsyncStorage.getItem('id');
                 if (value !== null) {
                     console.log("Valor recuperado com sucesso", value);
                     setTimeout(() => navigation.replace('Home'), 3000);
@@ -42,7 +42,7 @@ const LoadingScreen = ({navigation}) =>{
             } else if (valorCadastro === 'alterar-Screen' || valorCadastro === 'cadastro-concluido') {
                 setTimeout(() => navigation.replace('Login'), 1500);
             } else {
-                setTimeout(() => navigation.replace("Welcome"), 7000);
+                setTimeout(() => navigation.replace("Login"), 7000);
             }
         }
 

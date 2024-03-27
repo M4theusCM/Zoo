@@ -12,7 +12,7 @@ const LoginScreen = ({ navigation }) => {
     const [senha, setSenha] = useState('');
 
     function alterarScreen() {
-        navigation.navigate('loading', { login: 'alterar-Screen' });
+        navigation.navigate('Loading', { login: 'alterar-Screen' });
     }
 
     const login = async () => {
@@ -20,14 +20,14 @@ const LoginScreen = ({ navigation }) => {
             const response = await axios.get(`http://localhost/apiZoo/userCredentials?email=${email}&senha=${senha}`);
             console.log(response.data);
             const idUser = response.data['id'];
-            AsyncStorage.setItem('idUser', idUser)
+            AsyncStorage.setItem('id', idUser)
             .then(() => {
                 console.log('salvo com sucesso');
             })
             .catch(() => {
                 console.error("Erro no salvamento local", error);
             })
-            navigation.navigate('loading', { login: 'login' });
+            navigation.navigate('Loading', { login: 'login' });
         } catch (error) {
             console.error('Erro ao tentar logar', error);
             return false;

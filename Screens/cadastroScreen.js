@@ -12,7 +12,7 @@ const CadastroScreen = ({navigation}) => {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     function alterarScreen(){
-        navigation.navigate('loading', {cadastro: 'alterar-Screen'});
+        navigation.navigate('Loading', {cadastro: 'alterar-Screen'});
     }
     const cadastrar = async() =>{
         const dadosUser={
@@ -20,18 +20,16 @@ const CadastroScreen = ({navigation}) => {
             'email': email,
             'senha': senha,
         };
-
         const axiosConfig = {
             headers: {
                 /* 'Accept': 'application/json',
                 */'Content-Type': 'application/x-www-form-urlencoded'
             }
         };
-
         try {
             const response = await axios.post('http://localhost/apiZoo/userInsert', dadosUser, axiosConfig );
             console.log(response.data);
-            navigation.navigate('loading', {cadastro: 'cadastro-completo'}); navigation.navigate('loading', {cadastro: 'alterar-Screen'});
+            navigation.navigate('Loading', {cadastro: 'cadastro-completo'}); navigation.navigate('Loading', {cadastro: 'alterar-Screen'});
         } catch (error) {
             console.error('Erro ao criar jogador1', error );
             return false;
