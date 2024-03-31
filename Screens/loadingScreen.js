@@ -20,7 +20,7 @@ const LoadingScreen = ({navigation}) =>{
     useEffect(() => {
         const verificarUsuario = async () => {
             try {
-                const value = await AsyncStorage.getItem('idUser');
+                const value = await AsyncStorage.getItem('id');
                 if (value !== null) {
                     console.log("Valor recuperado com sucesso", value);
                     setTimeout(() => navigation.replace('Home'), 3000);

@@ -3,12 +3,11 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 // impotação das telas
-import LoadingScreen from './Screens/loadingScreen';
+import LoadingScreen from './Screens/LoadingScreen';
 import LoginScreen from './Screens/LoginScreen';
 import CadastroScreen from './Screens/CadastroScreen';
 import HomeScreen from './Screens/HomeScreen';
-import HomeScreen2 from './Screens/HomeScreen2';
-
+import WelcomeScreen from './Screens/WelcomeScreen'
 const Stack = createNativeStackNavigator();
 export default function App() {
   return (
