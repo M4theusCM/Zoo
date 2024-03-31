@@ -42,7 +42,7 @@ const LoadingScreen = ({navigation}) =>{
             } else if (valorCadastro === 'alterar-Screen' || valorCadastro === 'cadastro-concluido') {
                 setTimeout(() => navigation.replace('Login'), 1500);
             } else {
-                setTimeout(() => navigation.replace("Welcome"), 7000);
+                setTimeout(() => navigation.replace("Home2"), 1000);
             }
         }
 
