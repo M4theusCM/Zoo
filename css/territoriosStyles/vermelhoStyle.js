@@ -15,29 +15,16 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    top:{
-        width: '100%',
-        heigth: 40,
-        display:"flex",
-        flexDirection: 'column',
-        justifyContent: 'flex-end',
-        alignItems: 'flex-start',
-        marginLeft: 30,
-    },
-    voltar:{
-        width: 30,
-        height:30,
-    },
     navColor:{
         width:'85%',
         height: 25,
         borderRadius: 20,
-        backgroundColor:'#007099',
+        backgroundColor:'rgba(232, 2, 5, 1)',
     },
     titleNav:{
         fontSize: 30,
         fontWeight: 'bold',
-        color: '#007099',
+        color: 'rgba(232, 2, 5, 1)',
     },
     areaAnimais:{
         width: '100%',
@@ -51,7 +38,7 @@ const styles = StyleSheet.create({
         height: 150,
         borderWidth: 2,
         borderRadius: 10,
-        borderColor: '#007099',
+        borderColor: 'rgba(232, 2, 5, 1)',
         marginBottom: 20,
         display: 'flex',
         flexDirection: 'row'
@@ -88,13 +75,6 @@ const styles = StyleSheet.create({
     descAnimalText:{
         fontFamily: '24',
         textAlign: 'center',
-    },
-    flatlist:{
-        width: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        backgroundColor: 'red'
     }
 })
 export default styles;

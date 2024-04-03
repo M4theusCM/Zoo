@@ -51,134 +51,135 @@ const styles = StyleSheet.create({
     territorios: {
         width: '100%',
         marginTop: 20,
+        marginBottom: 20,
         display: 'flex',
-        flexDirection: 'column',
         alignItems: 'center',
     },
-    presable:{
+    territoriosArea:{
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'space-between',
+        paddingHorizontal: 10
+    },
+    imageCard:{
+        width: 180,
+        height: 180,
+        marginBottom: 20,
+        marginRight: 10,
+        marginLeft: 10,
+        borderRadius: 20,
+    },
+    flatlistContainer:{
+        width: 400,
+        height: 'auto',
+        paddingBottom: 20,
+        display: 'flex',
+        justifyContent: 'space-around',
+        alignItems: 'center'
+    },
+
+    conteinerModal:{
+        flex: 1,
+        width: '100%',
+        backgroundColor:'rgba(0,0,0,0.7)',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    modalComponente:{
+        width: 325,
+        height: 603,
+        backgroundColor:"#009900",
+        borderRadius: 15,
+    },
+    topoModal:{
+        flex: 0.5,
+        width: '100%',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    areaTextApresentacao:{
+        flex: 1.75,
+        width: '100%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingLeft: "7%",
+        paddingRight: "7%"
+    },
+    fecharModalZoo:{
+        flex: 0.75,
+        width: '100%',
+        justifyContent: 'center',
+        alignItems: 'flex-end',
+    },
+    h1:{
+        color: '#fff',
+        fontSize: 33,
+    },
+    txtApresentacao:{
+        color: '#fff',
+        fontSize: 23,
+        textAlign:"center",
+    },
+    imgMOdal:{
+        width:127 ,
+        height:127 ,
+    },
+    fundoModal:{
+        width: 325,
+        height: 603,
+        borderRadius: 15,
+        position:  'absolute',
+    },
+    mascaraModal:{
+        width: 325,
+        height: 603,
+        borderRadius: 15,
+        backgroundColor: 'rgba(0,0,0,0.4)'
+    },
+
+    configModal:{
+        width: '100%',
+        flex: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'rgba(0,0,0,0.4)'
+    
+    },
+    cardModalConfig:{
+        width: 315,
+        height: 350,
+        backgroundColor: '#fff',
+        borderRadius: 20,
+    },
+    bottomConfigModal:{
+        height: '80%',
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
+        justifyContent: 'space-evenly'
     },
-    iconAnimalImg:{
-        width: 75,
-        height: 75,
-        borderRadius: 20,
+    titleConfig:{
+        color: '#006499',
+        fontSize: 30,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        marginTop: 20
     },
-
-    territorioAzul:{
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '80%',
-        height: 100,
-        borderWidth: 2,
-        borderRadius: 10, 
-        borderColor: 'rgba(0, 138,185, 1)',
-        marginBottom: 30,
+    exitText:{
+        color: '#991020',
+        fontSize: 25,
+        textAlign:'center',
+        fontWeight: 'bold'
     },
-    territorioVermelho:{
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '80%',
-        height: 100,
-        borderWidth: 2,
-        borderRadius: 10, 
-        borderColor: 'rgba(232, 2, 5, 1)',
-        marginBottom: 30,
-    },
-    territorioVerde:{
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '80%',
-        height: 100,
-        borderWidth: 2,
-        borderRadius: 10, 
-        borderColor: 'rgba(82, 164, 4, 1)',
-        marginBottom: 30,
-    },
-    territorioRoxo:{
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '80%',
-        height: 100,
-        borderWidth: 2,
-        borderRadius: 10, 
-        borderColor: 'rgba(98, 37, 141, 1)',
-        marginBottom: 30,
-    },
-    territorioMarrom:{
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '80%',
-        height: 100,
-        borderWidth: 2,
-        borderRadius: 10, 
-        borderColor: 'rgba(49, 22, 3, 1)',
-        marginBottom: 30,
-    },
-    territorioRosa:{
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '80%',
-        height: 100,
-        borderWidth: 2,
-        borderRadius: 10, 
-        borderColor: 'rgba(253, 186, 204, 1)',
-        marginBottom: 30,
-    },
-    areaDino:{
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '80%',
-        height: 100,
-        borderWidth: 2,
-        borderRadius: 10, 
-        borderColor: 'rgba(138, 118, 93, 1)',
-        marginBottom: 30,
-    },
-    iconTerritorio:{
-        width: '40%',
-        height: '100%',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    titleTeritorio:{
-        width: '60%',
-        height: '100%',
-        display: 'flex',
-        justifyContent: 'center',
-    },
-    titleTeritorioR:{
-        width: '60%',
-        height: '100%',
-        display: 'flex',
-        alignItems: 'flex-end',
-        justifyContent: 'center',
-    },
-    nameTerritorio:{
-        fontSize: 23,
-    },
-    configImg:{
-        width: 30,
-        height: 30, 
+    textConfig:{
+        color: '#000',
+        fontSize: 25,
+        textAlign: 'center'
     }
-
 });
 
 export default styles;
