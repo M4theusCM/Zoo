@@ -22,14 +22,15 @@ const LoginScreen = ({ navigation }) => {
             const idUser = response.data['id'];
             const emailUser = response.data['email'];
             const senhaUser = response.data['senha'];
+            const nomeUser = response.data['nome'];
             
             // salvando itens do user localmetente
             AsyncStorage.setItem('idUser', idUser)
             AsyncStorage.setItem('emailUser', emailUser)
             AsyncStorage.setItem('senhaUser', senhaUser)
+            AsyncStorage.setItem('nomeUser', nomeUser)
             AsyncStorage.setItem('BemVindo', 0)
 
-            
             .then(() => {
                 console.log('salvo com sucesso');
             })

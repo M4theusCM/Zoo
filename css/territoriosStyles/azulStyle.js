@@ -40,14 +40,17 @@ const styles = StyleSheet.create({
         color: '#007099',
     },
     areaAnimais:{
+        paddingLeft: 40,
+        paddingRight: 40,
         width: '100%',
         height: 'auto',
         display: 'flex',
         flexDirection: 'column',
+        justifyContent: 'center',
         alignItems: 'center',
     },
     cardAnimais:{
-        width: '85%',
+        width: '100%',
         height: 150,
         borderWidth: 2,
         borderRadius: 10,
@@ -56,12 +59,8 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row'
     },
-    efeitoEsquerda:{
-        width: '15%',
-        height: '100%',
-    },
     imgAnimalArea:{
-        width: '25%',
+        width: '40%',
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
@@ -69,12 +68,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     imgAnimal :{
-        width: 60,
-        height: 60,
-        borderRadius: 50,
+        width: 120,
+        height: 119,
+        borderRadius: 60,
     },
     descAnimal:{
-        width: '45%',
+        width: '60%',
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
@@ -85,16 +84,10 @@ const styles = StyleSheet.create({
         fontSize: 24,
         fontWeight: 'bold',
     },
-    descAnimalText:{
-        fontFamily: '24',
-        textAlign: 'center',
-    },
-    flatlist:{
-        width: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        backgroundColor: 'red'
+    modalContainer:{
+        backgroundColor: '#007099',
+        flex: 1,
+        width: '100%'
     }
 })
 export default styles;

@@ -11,10 +11,6 @@ import axios from 'axios'; // Importar o axios
 
 const LoadingScreen = ({ navigation }) => {
     const route = useRoute();
-    // tempo tela de carregamento/splash
-    const timeLoading = 7000;
-    // tempo tela de troca de pagina
-    const time = 1500;
     // valores para troca de tela
     const valorLogin = route.params?.login;
     const valorCadastro = route.params?.cadastro;

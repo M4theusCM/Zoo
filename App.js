@@ -6,7 +6,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import LoadingScreen from './Screens/loadingScreen';
 import LoginScreen from './Screens/loginScreen';
 import CadastroScreen from './Screens/cadastroScreen';
-import HomeScreen from './Screens/HomeScreen';
+
 import HomeScreen2 from './Screens/HomeScreen2';
 
 // territorios
@@ -16,7 +16,8 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Home'>
+      {/* <Stack.Navigator initialRouteName='Home'> */}
+      <Stack.Navigator initialRouteName='Loading'>
         <Stack.Screen name="Loading" component={LoadingScreen}  options={{ headerShown: false }}/>
         <Stack.Screen name="Login" component={LoginScreen} options={{headerShown: false}}/>
         <Stack.Screen name="Cadastro" component={CadastroScreen} options={{headerShown:false}} />

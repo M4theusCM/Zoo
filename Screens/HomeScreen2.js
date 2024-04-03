@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { View, Text, SafeAreaView, ScrollView, StatusBar, Image, Pressable, FlatList, Modal } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import axios, { Axios } from 'axios'; 
 import styles from "../css/homeStyle2";
 import config from "../assets/img/icone/config.png";
 import icon from "../assets/img/icone/icon.png";
@@ -18,6 +19,7 @@ import fundoModal from '../assets/img/fundo/fundo-2-mini.png'
 const HomeScreen = () => {
     const [modalWelcome, setModalWelcome] = useState(false)
     const [modalConfig, setModalConfig] = useState(false)
+    
     useEffect(() => {
         const fetchData = async () => {
             const bemVindo = await AsyncStorage.getItem('BemVindo');
@@ -27,6 +29,7 @@ const HomeScreen = () => {
         };
         fetchData();
     }, []);
+
     function fecharModal() {
         setModalWelcome(false)
         AsyncStorage.setItem('BemVindo', 1)
@@ -100,7 +103,7 @@ const HomeScreen = () => {
                     <View style={styles.topNav}>
                         <View style={styles.logoNav}>
                             <Image source={icon} style={styles.iconImg} />
-                            <Text style={styles.nameUser}>Flavin do Grau</Text>
+                            <Text style={styles.nameUser}>Matheus Campos</Text>
                         </View>
                         <View style={styles.confNav}>
                             <Pressable onPress={modalConfigTrue}>
