@@ -96,7 +96,8 @@ const styles = StyleSheet.create({
   modalArea:{
     flex: 1,
     width: '100%',
-    backgroundColor: 'rgba(232, 2, 5, 1)'
+    backgroundColor: 'rgba(232, 2, 5, 1)',
+    minHeight: 900,
   },
   topModal:{
     width: '100%',
@@ -118,7 +119,24 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'baseline',
     justifyContent: 'center',
-    paddingLeft: 30
+    paddingLeft: 30,
+  },
+  idModalDestaque:{
+    position: 'absolute',
+    width: 35,
+    height: 35,
+    borderRadius: 17.5,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderColor: '#000',
+    borderStyle: 'solid',
+    borderWidth: 2,
+  },
+  id:{
+    color: 'rgba(232, 2, 5, 1)',
+    fontSize: 23,
+    fontWeight: 'bold'
   },
   voltarModal:{
     width: '50%',
@@ -128,7 +146,44 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
     justifyContent: 'center',
     paddingRight: 30,
+  },
+  imgAnimal:{
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  imgCard:{
+    width:416 ,
+    height: 231,
+    borderRadius: 20,
+  },
+  areaInfo:{
+    flex: 1,
+    width:'100%',
+    display: 'flex',
+    alignItems: 'center',
+    marginTop: 30,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    paddingBottom: 30,
+    backgroundColor: '#fff',
+    
+  },
+  areaInfoInicio:{
+    width: '80%',
+    display: 'flex'
+  },
+  tituloInfo:{
+    color: 'rgba(232, 2, 5, 1)',
+    fontSize: 30,
+    fontWeight:  'bold',
+  },
+  descInfo:{
+    color: 'black',
+    fontSize: 24
   }
+
+  // backgroundColor:'#007099',
 
 });
 export default styles;

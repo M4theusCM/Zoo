@@ -1,231 +1,216 @@
-// ListaPage.js
-import React, {useState} from 'react';
-import { StyleSheet, FlatList, Text, View, Image, Modal, Pressable } from 'react-native';
+import {
+  SafeAreaView,
+  ScrollView,
+  View,
+  Text,
+  Image,
+  FlatList,
+  Pressable,
+  Modal,
+} from "react-native";
+import styles from "../../css/territoriosStyles/azulStyle";
+import { useNavigation } from "@react-navigation/native";
+import retomar from "../../assets/img/icone/retornar.png";
+import { useState } from "react";
 
-const data = [
-  { id: '1', nome: 'Arara-Azul', image: require('../../assets/img/animais/azul/onca-pintada.jpg'), text: 'Animal tal sla oque isso ai mesmo...' },
-  { id: '2', nome: 'Tucano', image: require('../../assets/img/animais/azul/onca-pintada.jpg'), text: 'Animal tal sla oque isso ai mesmo...' },
-  { id: '3', nome: 'Calau Rinoceronte', image: require('../../assets/img/animais/azul/onca-pintada.jpg'), text: 'Animal tal sla oque isso ai mesmo...' },
-  { id: '4', nome: 'Pinguim-Imperador', image: require('../../assets/img/animais/azul/onca-pintada.jpg'), text: 'Animal tal sla oque isso ai mesmo...' },
-  { id: '5', nome: 'Gavião-Real', image: require('../../assets/img/animais/azul/onca-pintada.jpg'), text: 'Animal tal sla oque isso ai mesmo...' },
+const animais = [
+  {
+    id: "1",
+    nome: "Arara-Azul",
+    image: require("../../assets/img/animais/vermelho/arara-azul.jpg"),
+    imageIcone: require("../../assets/img/animais/vermelho/arara-azul-icone.jpg"),
+    nomeCientifico: "Anodorhynchus hyacinthinus",
+    peso: "2.5 kg - 3 kg",
+    altura: "90c cm - 1 m",
+    expectativaDeVida: "50 anos",
+    especie: "Aves",
+    descricao: "A arara-azul é uma das aves mais icônicas e raras da América do Sul. Conhecida por sua plumagem azul intensa e seu tamanho imponente, é um símbolo da biodiversidade da floresta amazônica.",
+  },
+  {
+    id: "2",
+    nome: "Mico-leão-dourado",
+    image: require("../../assets/img/animais/vermelho/arara-azul.jpg"),
+    imageIcone: require("../../assets/img/animais/vermelho/arara-azul-icone.jpg"),
+    nomeCientifico: "Leontopithecus rosalia",
+    peso: "600 g - 700 g",
+    altura: "20 cm - 35 cm",
+    expectativaDeVida: "15 anos",
+    especie: "Mamíferos",
+    descricao: "O mico-leão-dourado é uma espécie de primata endêmica da Mata Atlântica brasileira. Sua pelagem dourada e sua pequena estatura o tornam uma espécie única e bastante ameaçada de extinção.",
+  },
+  {
+    id: "3",
+    nome: "Arara-militar",
+    image: require("../../assets/img/animais/vermelho/arara-azul.jpg"),
+    imageIcone: require("../../assets/img/animais/vermelho/arara-azul-icone.jpg"),
+    nomeCientifico: "Ara militaris",
+    peso: "1 kg - 1.5 kg",
+    altura: "70 cm - 80 cm",
+    expectativaDeVida: "50 anos",
+    especie: "Aves",
+    descricao: "A arara-militar é uma espécie de arara encontrada em partes da América Central e do Sul. Suas plumagens vibrantes e sua vocalização alta a tornam uma presença marcante nas florestas tropicais.",
+  },
+  {
+    id: "4",
+    nome: "Tucano toco",
+    image: require("../../assets/img/animais/vermelho/arara-azul.jpg"),
+    imageIcone: require("../../assets/img/animais/vermelho/arara-azul-icone.jpg"),
+    nomeCientifico: "Ramphastos toco",
+    peso: "500 g - 600 g",
+    altura: "55 cm - 65 cm",
+    expectativaDeVida: "20 anos",
+    especie: "Aves",
+    descricao: "O tucano toco é conhecido por seu grande bico laranja e sua plumagem preta e branca. É encontrado em várias partes da América do Sul e é símbolo de muitas campanhas de conservação.",
+  },
+  {
+    id: "5",
+    nome: "Flamingo chileno",
+    image: require("../../assets/img/animais/vermelho/arara-azul.jpg"),
+    imageIcone: require("../../assets/img/animais/vermelho/arara-azul-icone.jpg"),
+    nomeCientifico: "Phoenicopterus chilensis",
+    peso: "2 kg - 3 kg",
+    altura: "90 cm - 120 cm",
+    expectativaDeVida: "40 anos",
+    especie: "Aves",
+    descricao: "O flamingo chileno é uma espécie de flamingo encontrado na América do Sul. Suas plumagens rosadas distintivas e seus hábitos de alimentação em grupo o tornam uma visão impressionante nas salinas e lagunas.",
+  },
+  {
+    id: "6",
+    nome: "Lagarto teiú",
+    image: require("../../assets/img/animais/vermelho/arara-azul.jpg"),
+    imageIcone: require("../../assets/img/animais/vermelho/arara-azul-icone.jpg"),
+    nomeCientifico: "Tupinambis teguixin",
+    peso: "2 kg - 4 kg",
+    altura: "80 cm - 1 m",
+    expectativaDeVida: "20 anos",
+    especie: "Répteis",
+    descricao: "O lagarto teiú é uma espécie de lagarto encontrado em várias partes da América do Sul. É conhecido por sua língua bifurcada e seu comportamento omnívoro, alimentando-se de frutas, insetos e pequenos vertebrados.",
+  },
+  {
+    id: "7",
+    nome: "Jabuti",
+    image: require("../../assets/img/animais/vermelho/arara-azul.jpg"),
+    imageIcone: require("../../assets/img/animais/vermelho/arara-azul-icone.jpg"),
+    nomeCientifico: "Chelonoidis carbonaria",
+    peso: "5 kg - 10 kg",
+    altura: "25 cm - 30 cm",
+    expectativaDeVida: "80 anos",
+    especie: "Répteis",
+    descricao: "O jabuti é uma espécie de tartaruga terrestre encontrada em diversas regiões da América do Sul. Sua carapaça convexa e seu casco robusto o protegem de predadores naturais, e sua longevidade é impressionante.",
+  },
 
-  // Adicione mais itens conforme necessário
 ];
-
-const ListItem = ({ item }) => {
+const ListaItem = ({ item }) => {
   const [modalVisible, setModalVisible] = useState(false);
-
   return (
+
+
     <View>
       <Modal
         animationType="fade"
         transparent={true}
         visible={modalVisible}
-        onRequestClose={() => {
-          Alert.alert('Modal has been closed.');
+        onRequestClone={() => {
+          Alert.Alert("Modal has been closed.");
           setModalVisible(!modalVisible);
-      }}>
-        <View style={styles.centeredView}>
-          <View style={styles.modalView}>
-            <View style={styles.numberModal}>
-               <Text style={styles.num}>{item.id}</Text> 
+        }}
+      >
+        <ScrollView style={styles.scrollView}>
+          <View style={styles.modalArea}>
+            <View style={styles.topModal}>
+              <View style={styles.controlerTop}>
+                <View style={styles.idModal}>
+                  <View style={styles.idModalDestaque}><Text style={styles.id}>{item.id}</Text></View>
+                </View>
+                <View style={styles.voltarModal}>
+                  <Pressable onPress={() => setModalVisible(false)}>
+                    <Image source={retomar} style={styles.voltar} />
+                  </Pressable>
+                </View>
+              </View>
+              <View style={styles.imgAnimal}>
+                <Image source={item.image} style={styles.imgCard} />
+              </View>
             </View>
-            <Pressable
-              style={[styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}>
-              <Text style={styles.textBtnF}>X</Text>
-            </Pressable>  
+            <View style={styles.areaInfo}>
+              <View style={styles.areaInfoInicio}>
+                <Text style={styles.tituloInfo}>Nome Popular: </Text>
+                <Text style={styles.descInfo}>{item.nome}</Text>
+              </View>
+              <View style={styles.areaInfoInicio}>
+                <Text style={styles.tituloInfo}>Nome Cientifico:</Text>
+                <Text style={styles.descInfo}>{item.nomeCientifico}</Text>
+              </View>
+              <View style={styles.areaInfoInicio}>
+                <Text style={styles.tituloInfo}>Altura: </Text>
+                <Text style={styles.descInfo}>{item.altura}</Text>
+              </View>
+              <View style={styles.areaInfoInicio}>
+                <Text style={styles.tituloInfo}>Peso: </Text>
+                <Text style={styles.descInfo}>{item.peso}</Text>
+              </View>
+              <View style={styles.areaInfoInicio}>
+                <Text style={styles.tituloInfo}>Especie</Text>
+                <Text style={styles.descInfo}>{item.especie}</Text>
+              </View>
+              <View style={styles.areaInfoInicio}>
+                <Text style={styles.tituloInfo}>Expectativa de Vida</Text>
+                <Text style={styles.descInfo}>{item.expectativaDeVida}</Text>
+              </View>
+              <View style={styles.areaInfoInicio}>
+                <Text style={styles.tituloInfo}>Descrição</Text>
+                <Text style={styles.descInfo}>{item.descricao}</Text>
+              </View>
+            </View>
           </View>
-        </View>
+        </ScrollView>
       </Modal>
-      
-
-      <Pressable style={[styles.button, styles.buttonOpen]} onPress={() => setModalVisible(true)}>
-
+      <Pressable
+        style={[styles.button, styles.buttonOpen]}
+        onPress={() => setModalVisible(true)}
+      >
         <View style={styles.card}>
-          <View style={styles.effeitos}>
-            <View style={styles.bola1}></View>
-            <View style={styles.bola2}></View>
-            <View style={styles.bola3}></View>
-            <View style={styles.bola4}></View>
-            <View style={styles.bola5}></View>
-          </View>
           <View style={styles.animal}>
-            <Image source={item.image} style={styles.imagem}/>
+            <Image source={item.imageIcone} style={styles.imagem} />
           </View>
           <View style={styles.box}>
             <Text style={styles.nome}>{item.nome}</Text>
-            <Text style={styles.text}>{item.text}</Text>
           </View>
         </View>
-
       </Pressable>
-        
-      
-     
     </View>
-  );
-};
-const styles = StyleSheet.create({
-  card:{
-    width: 350,
-    height: 180,
-    margin: 15,
-    borderRadius: 15,
-    backgroundColor: '#fff',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    position: 'relative',
-    shadowColor: '#000',
-        shadowOffset: {
-          width: 10,
-          height: 10,
-        },
-        shadowOpacity: 0.15,
-        shadowRadius: 3.84,
-        elevation: 7,
-
-  },
-  animal:{
-    borderWidth: 2,
-    borderColor: '#fff',
-    borderRadius: 120,
-    width: 120,
-    height: 120,
-    justifyContent: 'center',
-    alignItems: 'center',
-    overflow: 'hidden',
-    shadowColor: '#000',
-        shadowOffset: {
-          width: 0,
-          height: 10,
-        },
-        shadowOpacity: 0.15,
-        shadowRadius: 3.84,
-        elevation: 7,
-  },
-  imagem:{
-    width: 120,
-    height: 120,
-  },
-  box:{
-    padding: 20,
-    width: 180,
-    height: 120,
-    gap: 5,
-  },
-  nome:{
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  text:{
-    fontSize: 15,
-  },
-  effeitos:{
-    width: 120,
-    height: 100,
-    position: 'absolute',
-    top: 0,
-    right: 0,
-  },
-  bola1:{
-    position: 'absolute',
-    width: 70,
-    height: 70,
-    borderRadius: 70,
-    top: 5,
-    right: 5,
-    backgroundColor: '#C4EB8A',
-  },
-  bola2:{
-    position: 'absolute',
-    width: 45,
-    height: 45,
-    borderRadius: 45,
-    top: 50,
-    right: 5,
-    backgroundColor: '#C4EB8A',
-  },
-  bola3:{
-    position: 'absolute',
-    width: 45,
-    height: 45,
-    borderRadius: 45,
-    top: 5,
-    right: 50,
-    backgroundColor: '#C4EB8A',
-  },
-  bola4:{
-    position: 'absolute',
-    width: 50,
-    height: 50,
-    borderRadius: 50,
-    top: 15,
-    right: 15,
-    backgroundColor: '#7DC983',
-  },
-  bola5:{
-    position: 'absolute',
-    width: 20,
-    height: 20,
-    borderRadius: 25,
-    top: 60,
-    right: 75,
-    backgroundColor: '#C4EB8A',
-  },
 
 
-  // MODAL DESIGN!!!
 
-  centeredView:{ 
-    position: 'relative',
-    height: '100%',
-    width: '100%',
-    borderWidth: 1,
-    backgroundColor: '#fff',
-  },
-  buttonClose:{ 
-    position: 'absolute',
-    backgroundColor: '#fff',
-    borderWidth: 1, 
-    borderRadius: 50,
-    width: 50,
-    height: 50,
-    justifyContent: 'center',
-    alignItems: 'center',
-    right: 30,
-    top: 30,          
-  },
-
-  numberModal:{
-    position: 'absolute',
-    backgroundColor: '#fff',
-    borderWidth: 1, 
-    borderRadius: 80,
-    width: 80,
-    height: 80,
-    justifyContent: 'center',
-    alignItems: 'center',
-    left: 30,
-    top: 30, 
-  },
-  num:{
-    fontSize: 25,
-    fontWeight: 'bold', 
-  },
-
-});
-
-const ListaVerde = () => {
-  return (  
-    <FlatList
-      data={data}
-      renderItem={({ item }) => <ListItem item={item} />}
-      keyExtractor={item => item.id}
-    />  
   );
 };
 
-
-export default ListaVerde;
+const Azul = () => {
+  const navigation = useNavigation();
+  function voltar() {
+    navigation.navigate("Home");
+  }
+  return (
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.scrollView}>
+        <View style={styles.nav}>
+          <View style={styles.top}>
+            <Pressable onPress={voltar}>
+              <Image source={retomar} style={styles.voltar} />
+            </Pressable>
+          </View>
+          <Text style={styles.titleNav}>Territorio Azul</Text>
+          <View style={styles.navColor}></View>
+        </View>
+        <View style={styles.areaAnimais}>
+          <FlatList
+            data={animais}
+            renderItem={({ item }) => <ListaItem item={item} />}
+            keyExtractor={(item) => item.id}
+          />
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
+export default Azul;

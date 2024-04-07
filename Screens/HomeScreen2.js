@@ -80,7 +80,7 @@ const HomeScreen = () => {
         },
         {
             id: '7',
-            title: 'TerritorioDino',
+            title: 'DinoKids',
             image: animal_7,
         },
     ];

@@ -32,12 +32,12 @@ const styles = StyleSheet.create({
     width: "85%",
     height: 25,
     borderRadius: 20,
-    backgroundColor: "#007099",
+    backgroundColor: "#fdbacc",
   },
   titleNav: {
     fontSize: 30,
     fontWeight: "bold",
-    color: "#007099",
+    color: "#fdbacc",
   },
   button: {
     width: "100%",
@@ -50,11 +50,11 @@ const styles = StyleSheet.create({
     height: 150,
     borderWidth: 2,
     borderRadius: 10,
-    borderColor: "#007099",
+    borderColor: "#fdbacc",
     marginBottom: 20,
     display: "flex",
     flexDirection: "row",
-    shadowColor: '#007099',
+    shadowColor: '#fdbacc',
     shadowOffset: {
       width: 10,
       height: 10,
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
   modalArea:{
     flex: 1,
     width: '100%',
-    backgroundColor: '#007099',
+    backgroundColor: '#fdbacc',
     minHeight: 900,
   },
   topModal:{
@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
   },
   id:{
-    color: '#007099',
+    color: '#fdbacc',
     fontSize: 23,
     fontWeight: 'bold'
   },
@@ -174,7 +174,7 @@ const styles = StyleSheet.create({
     display: 'flex'
   },
   tituloInfo:{
-    color: '#007099',
+    color: '#fdbacc',
     fontSize: 30,
     fontWeight:  'bold',
   },
@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
     fontSize: 24
   }
 
-  // backgroundColor:'#007099',
+  // backgroundColor:'#fdbacc',
 
 });
 export default styles;
