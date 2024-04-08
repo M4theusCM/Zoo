@@ -18,7 +18,6 @@ const animais = [
     id: "1",
     nome: "Arara-Azul",
     image: require("../../assets/img/animais/vermelho/arara-azul.jpg"),
-    imageIcone: require("../../assets/img/animais/vermelho/arara-azul-icone.jpg"),
     nomeCientifico: "Anodorhynchus hyacinthinus",
     peso: "2.5 kg - 3 kg",
     altura: "90c cm - 1 m",
@@ -29,8 +28,7 @@ const animais = [
   {
     id: "2",
     nome: "Mico-leão-dourado",
-    image: require("../../assets/img/animais/vermelho/arara-azul.jpg"),
-    imageIcone: require("../../assets/img/animais/vermelho/arara-azul-icone.jpg"),
+    image: require("../../assets/img/animais/vermelho/mico-leao-dourado.jpg"),
     nomeCientifico: "Leontopithecus rosalia",
     peso: "600 g - 700 g",
     altura: "20 cm - 35 cm",
@@ -41,8 +39,7 @@ const animais = [
   {
     id: "3",
     nome: "Arara-militar",
-    image: require("../../assets/img/animais/vermelho/arara-azul.jpg"),
-    imageIcone: require("../../assets/img/animais/vermelho/arara-azul-icone.jpg"),
+    image: require("../../assets/img/animais/vermelho/arara-militar.jpg"),
     nomeCientifico: "Ara militaris",
     peso: "1 kg - 1.5 kg",
     altura: "70 cm - 80 cm",
@@ -53,8 +50,7 @@ const animais = [
   {
     id: "4",
     nome: "Tucano toco",
-    image: require("../../assets/img/animais/vermelho/arara-azul.jpg"),
-    imageIcone: require("../../assets/img/animais/vermelho/arara-azul-icone.jpg"),
+    image: require("../../assets/img/animais/vermelho/tucunao-toco.jpg"),
     nomeCientifico: "Ramphastos toco",
     peso: "500 g - 600 g",
     altura: "55 cm - 65 cm",
@@ -65,8 +61,7 @@ const animais = [
   {
     id: "5",
     nome: "Flamingo chileno",
-    image: require("../../assets/img/animais/vermelho/arara-azul.jpg"),
-    imageIcone: require("../../assets/img/animais/vermelho/arara-azul-icone.jpg"),
+    image: require("../../assets/img/animais/vermelho/flamingo-chileno.jpg"),
     nomeCientifico: "Phoenicopterus chilensis",
     peso: "2 kg - 3 kg",
     altura: "90 cm - 120 cm",
@@ -77,8 +72,7 @@ const animais = [
   {
     id: "6",
     nome: "Lagarto teiú",
-    image: require("../../assets/img/animais/vermelho/arara-azul.jpg"),
-    imageIcone: require("../../assets/img/animais/vermelho/arara-azul-icone.jpg"),
+    image: require("../../assets/img/animais/vermelho/lagarto-teiú.jpg"),
     nomeCientifico: "Tupinambis teguixin",
     peso: "2 kg - 4 kg",
     altura: "80 cm - 1 m",
@@ -89,8 +83,7 @@ const animais = [
   {
     id: "7",
     nome: "Jabuti",
-    image: require("../../assets/img/animais/vermelho/arara-azul.jpg"),
-    imageIcone: require("../../assets/img/animais/vermelho/arara-azul-icone.jpg"),
+    image: require("../../assets/img/animais/vermelho/abuti.jpg"),
     nomeCientifico: "Chelonoidis carbonaria",
     peso: "5 kg - 10 kg",
     altura: "25 cm - 30 cm",
@@ -171,7 +164,7 @@ const ListaItem = ({ item }) => {
       >
         <View style={styles.card}>
           <View style={styles.animal}>
-            <Image source={item.imageIcone} style={styles.imagem} />
+            <Image source={item.image} style={styles.imagem} />
           </View>
           <View style={styles.box}>
             <Text style={styles.nome}>{item.nome}</Text>

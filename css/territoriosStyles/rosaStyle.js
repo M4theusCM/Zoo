@@ -32,12 +32,12 @@ const styles = StyleSheet.create({
     width: "85%",
     height: 25,
     borderRadius: 20,
-    backgroundColor: "#fdbacc",
+    backgroundColor: "#fc97b3",
   },
   titleNav: {
     fontSize: 30,
     fontWeight: "bold",
-    color: "#fdbacc",
+    color: "#fc97b3",
   },
   button: {
     width: "100%",
@@ -50,11 +50,11 @@ const styles = StyleSheet.create({
     height: 150,
     borderWidth: 2,
     borderRadius: 10,
-    borderColor: "#fdbacc",
+    borderColor: "#fc97b3",
     marginBottom: 20,
     display: "flex",
     flexDirection: "row",
-    shadowColor: '#fdbacc',
+    shadowColor: '#fc97b3',
     shadowOffset: {
       width: 10,
       height: 10,
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
   modalArea:{
     flex: 1,
     width: '100%',
-    backgroundColor: '#fdbacc',
+    backgroundColor: '#fc97b3',
     minHeight: 900,
   },
   topModal:{
@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
   },
   id:{
-    color: '#fdbacc',
+    color: '#fc97b3',
     fontSize: 23,
     fontWeight: 'bold'
   },
@@ -174,7 +174,7 @@ const styles = StyleSheet.create({
     display: 'flex'
   },
   tituloInfo:{
-    color: '#fdbacc',
+    color: '#fc97b3',
     fontSize: 30,
     fontWeight:  'bold',
   },
@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
     fontSize: 24
   }
 
-  // backgroundColor:'#fdbacc',
+  // backgroundColor:'#fc97b3',
 
 });
 export default styles;

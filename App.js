@@ -6,8 +6,9 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import LoadingScreen from './Screens/loadingScreen';
 import LoginScreen from './Screens/loginScreen';
 import CadastroScreen from './Screens/cadastroScreen';
-
 import HomeScreen2 from './Screens/HomeScreen2';
+import PerfilScreen from './Screens/perfilScreen';
+
 
 // territorios
 import TerritorioAzul from './Screens/territorios/azulScreen'
@@ -27,6 +28,7 @@ export default function App() {
         <Stack.Screen name="Login" component={LoginScreen} options={{headerShown: false}}/>
         <Stack.Screen name="Cadastro" component={CadastroScreen} options={{headerShown:false}} />
         <Stack.Screen name="Home" component={HomeScreen2} options={{headerShown:false}} />
+        <Stack.Screen name="Perfil" component={PerfilScreen} options={{headerShown:false}} />
         {/* <Stack.Screen name="Home2" component={HomeScreen2} options={{headerShown:false}} /> */}
         <Stack.Screen name="TerritorioAzul" component={TerritorioAzul} options={{headerShown:false}} />
         <Stack.Screen name="TerritorioVermelho" component={TerritorioVermelho} options={{headerShown:false}} />

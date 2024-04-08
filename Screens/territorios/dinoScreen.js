@@ -16,89 +16,71 @@ import {
   const animais = [
     {
       id: "1",
-      nome: "Arara-Azul",
-      image: require("../../assets/img/animais/vermelho/arara-azul.jpg"),
-      imageIcone: require("../../assets/img/animais/vermelho/arara-azul-icone.jpg"),
-      nomeCientifico: "Anodorhynchus hyacinthinus",
-      peso: "2.5 kg - 3 kg",
-      altura: "90c cm - 1 m",
-      expectativaDeVida: "50 anos",
-      especie: "Aves",
-      descricao: "A arara-azul é uma das aves mais icônicas e raras da América do Sul. Conhecida por sua plumagem azul intensa e seu tamanho imponente, é um símbolo da biodiversidade da floresta amazônica.",
+      nome: "Tiranossauro Rex",
+      image: require("../../assets/img/animais/dino/tiranossauro_rex.avif"),
+      nomeCientifico: "Tyrannosaurus rex",
+      peso: "8 toneladas - 14 toneladas",
+      altura: "4 m - 6 m",
+      periodo: "Cretáceo",
+      especie: "Saurischia",
+      descricao: "O Tiranossauro Rex é um dos dinossauros mais famosos e temidos do período Cretáceo. Reconhecido por seus grandes dentes serrilhados, era um predador ágil e poderoso que dominava sua cadeia alimentar.",
     },
     {
       id: "2",
-      nome: "Mico-leão-dourado",
-      image: require("../../assets/img/animais/vermelho/arara-azul.jpg"),
-      imageIcone: require("../../assets/img/animais/vermelho/arara-azul-icone.jpg"),
-      nomeCientifico: "Leontopithecus rosalia",
-      peso: "600 g - 700 g",
-      altura: "20 cm - 35 cm",
-      expectativaDeVida: "15 anos",
-      especie: "Mamíferos",
-      descricao: "O mico-leão-dourado é uma espécie de primata endêmica da Mata Atlântica brasileira. Sua pelagem dourada e sua pequena estatura o tornam uma espécie única e bastante ameaçada de extinção.",
+      nome: "Triceratops",
+      image: require("../../assets/img/animais/dino/triceratops.webp"),
+      nomeCientifico: "Triceratops horridus",
+      peso: "6 toneladas - 12 toneladas",
+      altura: "3 m - 3.5 m",
+      periodo: "Cretáceo",
+      especie: "Ornithischia",
+      descricao: "O Triceratops é um dinossauro herbívoro com três chifres distintivos em seu crânio. Viveu durante o final do período Cretáceo e é conhecido por sua defesa contra predadores, como o Tiranossauro Rex.",
     },
     {
       id: "3",
-      nome: "Arara-militar",
-      image: require("../../assets/img/animais/vermelho/arara-azul.jpg"),
-      imageIcone: require("../../assets/img/animais/vermelho/arara-azul-icone.jpg"),
-      nomeCientifico: "Ara militaris",
-      peso: "1 kg - 1.5 kg",
-      altura: "70 cm - 80 cm",
-      expectativaDeVida: "50 anos",
-      especie: "Aves",
-      descricao: "A arara-militar é uma espécie de arara encontrada em partes da América Central e do Sul. Suas plumagens vibrantes e sua vocalização alta a tornam uma presença marcante nas florestas tropicais.",
+      nome: "Velociraptor",
+      image: require("../../assets/img/animais/dino/velociraptor.jpg"),
+      nomeCientifico: "Velociraptor mongoliensis",
+      peso: "15 kg - 25 kg",
+      altura: "0.5 m - 0.6 m",
+      periodo: "Cretáceo",
+      especie: "Saurischia",
+      descricao: "O Velociraptor é um dinossauro terópode conhecido por sua agilidade e inteligência. Viveu durante o período Cretáceo e era um predador ágil que caçava em grupos, usando suas garras afiadas para atacar suas presas.",
     },
     {
       id: "4",
-      nome: "Tucano toco",
-      image: require("../../assets/img/animais/vermelho/arara-azul.jpg"),
-      imageIcone: require("../../assets/img/animais/vermelho/arara-azul-icone.jpg"),
-      nomeCientifico: "Ramphastos toco",
-      peso: "500 g - 600 g",
-      altura: "55 cm - 65 cm",
-      expectativaDeVida: "20 anos",
-      especie: "Aves",
-      descricao: "O tucano toco é conhecido por seu grande bico laranja e sua plumagem preta e branca. É encontrado em várias partes da América do Sul e é símbolo de muitas campanhas de conservação.",
+      nome: "Estegossauro",
+      image: require("../../assets/img/animais/dino/estegossauro.jpg"),
+      nomeCientifico: "Stegosaurus stenops",
+      peso: "2 toneladas - 5 toneladas",
+      altura: "2 m - 2.5 m",
+      periodo: "Jurássico",
+      especie: "Ornithischia",
+      descricao: "O Estegossauro é um dinossauro herbívoro reconhecido por suas placas ósseas e espinhos distintivos ao longo de seu dorso. Viveu durante o período Jurássico e possuía um pequeno cérebro em relação ao seu tamanho corporal.",
     },
     {
       id: "5",
-      nome: "Flamingo chileno",
-      image: require("../../assets/img/animais/vermelho/arara-azul.jpg"),
-      imageIcone: require("../../assets/img/animais/vermelho/arara-azul-icone.jpg"),
-      nomeCientifico: "Phoenicopterus chilensis",
-      peso: "2 kg - 3 kg",
-      altura: "90 cm - 120 cm",
-      expectativaDeVida: "40 anos",
-      especie: "Aves",
-      descricao: "O flamingo chileno é uma espécie de flamingo encontrado na América do Sul. Suas plumagens rosadas distintivas e seus hábitos de alimentação em grupo o tornam uma visão impressionante nas salinas e lagunas.",
+      nome: "Diplodoco",
+      image: require("../../assets/img/animais/dino/diplodoco.jpg"),
+      nomeCientifico: "Diplodocus carnegii",
+      peso: "10 toneladas - 16 toneladas",
+      altura: "4 m - 5 m (ao nível dos ombros)",
+      periodo: "Jurássico Superior",
+      especie: "Saurischia",
+      descricao: "O Diplodoco é um dos maiores dinossauros herbívoros conhecidos, com um pescoço longo e uma cauda igualmente longa. Viveu durante o período Jurássico Superior e se alimentava principalmente de plantas.",
     },
     {
       id: "6",
-      nome: "Lagarto teiú",
-      image: require("../../assets/img/animais/vermelho/arara-azul.jpg"),
-      imageIcone: require("../../assets/img/animais/vermelho/arara-azul-icone.jpg"),
-      nomeCientifico: "Tupinambis teguixin",
-      peso: "2 kg - 4 kg",
-      altura: "80 cm - 1 m",
-      expectativaDeVida: "20 anos",
-      especie: "Répteis",
-      descricao: "O lagarto teiú é uma espécie de lagarto encontrado em várias partes da América do Sul. É conhecido por sua língua bifurcada e seu comportamento omnívoro, alimentando-se de frutas, insetos e pequenos vertebrados.",
-    },
-    {
-      id: "7",
-      nome: "Jabuti",
-      image: require("../../assets/img/animais/vermelho/arara-azul.jpg"),
-      imageIcone: require("../../assets/img/animais/vermelho/arara-azul-icone.jpg"),
-      nomeCientifico: "Chelonoidis carbonaria",
-      peso: "5 kg - 10 kg",
-      altura: "25 cm - 30 cm",
-      expectativaDeVida: "80 anos",
-      especie: "Répteis",
-      descricao: "O jabuti é uma espécie de tartaruga terrestre encontrada em diversas regiões da América do Sul. Sua carapaça convexa e seu casco robusto o protegem de predadores naturais, e sua longevidade é impressionante.",
-    },
-  
+      nome: "Pterossauro",
+      image: require("../../assets/img/animais/dino/pterossauro.webp"),
+      nomeCientifico: "Pterosauria",
+      peso: "1 kg - 250 kg",
+      altura: "0.3 m - 2.5 m",
+      periodo: "Mesozoico",
+      especie: "Pterosauria",
+      descricao: "Os Pterossauros são répteis voadores que viveram durante o período Mesozoico. Eles não eram dinossauros, mas sim um grupo distinto de répteis voadores. Tinham asas membranosas que lhes permitiam voar e planar pelos céus pré-históricos.",
+    }
+    
   ];
   const ListaItem = ({ item }) => {
     const [modalVisible, setModalVisible] = useState(false);
@@ -154,8 +136,8 @@ import {
                   <Text style={styles.descInfo}>{item.especie}</Text>
                 </View>
                 <View style={styles.areaInfoInicio}>
-                  <Text style={styles.tituloInfo}>Expectativa de Vida</Text>
-                  <Text style={styles.descInfo}>{item.expectativaDeVida}</Text>
+                  <Text style={styles.tituloInfo}>Periodo em que Viveu</Text>
+                  <Text style={styles.descInfo}>{item.periodo}</Text>
                 </View>
                 <View style={styles.areaInfoInicio}>
                   <Text style={styles.tituloInfo}>Descrição</Text>
@@ -171,7 +153,7 @@ import {
         >
           <View style={styles.card}>
             <View style={styles.animal}>
-              <Image source={item.imageIcone} style={styles.imagem} />
+              <Image source={item.image} style={styles.imagem} />
             </View>
             <View style={styles.box}>
               <Text style={styles.nome}>{item.nome}</Text>

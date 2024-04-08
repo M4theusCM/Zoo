@@ -88,6 +88,10 @@ const HomeScreen = () => {
     const navigateToTerritorio = (title) => {
         navigation.navigate(title);
     };
+    const perfil = () => {
+        setModalConfig(false);
+        navigation.navigate('Perfil')
+    };
     const renderItem = ({ item }) => {
         return (
             <Pressable style={styles.item} onPress={() => navigateToTerritorio(item.title)}>
@@ -154,14 +158,14 @@ const HomeScreen = () => {
                     <View style={styles.cardModalConfig}>
                         <Text style={styles.titleConfig}>Configurações</Text>
                         <View style={styles.bottomConfigModal}>
-                            <Pressable>
-                                <Text style={styles.textConfig}>Perfil</Text>
-                            </Pressable>
                             <Pressable onPress={retornar}>
                                 <Text style={styles.textConfig}>Retornar</Text>
                             </Pressable>
+                            <Pressable onPress={perfil}>
+                                <Text style={styles.textConfig}>Perfil</Text>
+                            </Pressable>
                             <Pressable>
-                                <Text style={styles.textConfig}>contato</Text>
+                                <Text style={styles.textConfig}>Mapa</Text>
                             </Pressable>
                             <Pressable>
                                 <Text style={styles.textConfig}>Devs</Text>
