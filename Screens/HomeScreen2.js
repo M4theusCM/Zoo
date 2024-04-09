@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { View, Text, SafeAreaView, ScrollView, StatusBar, Image, Pressable, FlatList, Modal } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import axios, { Axios } from 'axios'; 
+import axios, { Axios } from 'axios';
 import styles from "../css/homeStyle2";
 import config from "../assets/img/icone/config.png";
 import icon from "../assets/img/icone/icon.png";
@@ -19,10 +19,13 @@ import fundoModal from '../assets/img/fundo/fundo-2-mini.png'
 const HomeScreen = () => {
     const [modalWelcome, setModalWelcome] = useState(false)
     const [modalConfig, setModalConfig] = useState(false)
-    
+    const [modalMapa, setModalMapa] = useState(false)
+    const [nomeUser, setNomeUser] = useState('');
     useEffect(() => {
         const fetchData = async () => {
             const bemVindo = await AsyncStorage.getItem('BemVindo');
+            const nome = await AsyncStorage.getItem('nomeUser');
+            setNomeUser(nome)
             if (bemVindo == 0) {
                 setModalWelcome(true);
             }
@@ -39,6 +42,8 @@ const HomeScreen = () => {
     }
     function retornar() {
         setModalConfig(false)
+        setModalMapa(false)
+        
     }
     function sair() {
         //lógica para limpar os dados locais e fazer o logout
@@ -92,6 +97,10 @@ const HomeScreen = () => {
         setModalConfig(false);
         navigation.navigate('Perfil')
     };
+    const mapa = () => {
+        setModalConfig(false)
+        setModalMapa(true)
+    }
     const renderItem = ({ item }) => {
         return (
             <Pressable style={styles.item} onPress={() => navigateToTerritorio(item.title)}>
@@ -107,7 +116,7 @@ const HomeScreen = () => {
                     <View style={styles.topNav}>
                         <View style={styles.logoNav}>
                             <Image source={icon} style={styles.iconImg} />
-                            <Text style={styles.nameUser}>Matheus Campos</Text>
+                            <Text style={styles.nameUser}>{nomeUser}</Text>
                         </View>
                         <View style={styles.confNav}>
                             <Pressable onPress={modalConfigTrue}>
@@ -164,12 +173,12 @@ const HomeScreen = () => {
                             <Pressable onPress={perfil}>
                                 <Text style={styles.textConfig}>Perfil</Text>
                             </Pressable>
-                            <Pressable>
+                            <Pressable onPress={mapa}>
                                 <Text style={styles.textConfig}>Mapa</Text>
                             </Pressable>
-                            <Pressable>
+                            {/* <Pressable>
                                 <Text style={styles.textConfig}>Devs</Text>
-                            </Pressable>
+                            </Pressable> */}
                             <Pressable onPress={sair}>
                                 <Text style={styles.exitText}>Sair</Text>
                             </Pressable>
@@ -177,6 +186,17 @@ const HomeScreen = () => {
                     </View>
                 </View>
 
+            </Modal>
+            <Modal visible={modalMapa} animationType="fade" transparent >
+                <View style={styles.mapaModal}>
+                    <View style={styles.AreaModalMapa}>
+                        <Pressable onPress={retornar}>
+                            <Image source={require("../assets/img/icone/retornar.png")} />
+                        </Pressable>
+                        <Text style={styles.nomeMapa}>Mapa do Zoo</Text>
+                        <Image source={require("../assets/img/territorios/mapa.jpeg")} style={styles.mapa} />
+                    </View>
+                </View>
             </Modal>
             <StatusBar style="auto" />
         </SafeAreaView>

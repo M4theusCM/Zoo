@@ -46,7 +46,9 @@ const styles = StyleSheet.create({
     },
     nameUser:{
         fontSize: 25,
-        marginLeft: 20
+        marginLeft: 20,
+        textAlign: 'center',
+        fontWeight: 'bold',
     },
     territorios: {
         width: '100%',
@@ -179,7 +181,33 @@ const styles = StyleSheet.create({
         color: '#000',
         fontSize: 25,
         textAlign: 'center'
-    }
+    },
+    areaMapa:{
+        width: '100%',
+        display: 'flex',
+        alignItems: 'center',
+    },
+    nomeMapa:{
+        fontSize: 25,
+        fontWeight: 'bold',
+        textAlign:'center',
+        marginBottom: 30,
+        color: '#000'
+    },
+    mapa:{
+        width: 400,
+        height: 264,
+    },
+    mapaModal:{
+        width: '100%',
+        flex: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'rgba(255,255,255,0.9)'
+    
+    },
 });
 
 export default styles;
